@@ -2,6 +2,8 @@
 
 A beautifully designed digital closet app built with **React + TypeScript + Vite**.
 
+<img width="1899" height="965" alt="Screenshot 2026-03-25 174133" src="https://github.com/user-attachments/assets/f3c73486-14cc-4a66-a4ad-c845943dd9ec" />
+
 ## Features
 
 - 📸 Upload clothing photos (drag & drop or browse)
@@ -29,6 +31,19 @@ src/
 │   └── useFileUpload.ts      # Drag & drop file upload logic
 ├── styles/
 │   └── globals.css           # Global CSS, keyframes, variables
+│   └── CSS/                  # Components CSS
+│       ├── Layout.module.css
+│       ├── Header.module.css
+│       ├── Footer.module.css
+│       ├── Toast.module.css
+│       ├── UploadZone.module.css
+│       ├── AddItemTab.module.css
+│       ├── ClothingCard.module.css
+│       ├── ClosetTab.module.css
+│       ├── OutfitPiece.module.css
+│       ├── OutfitsTab.module.css
+│       ├── SavedOutfitList.module.css
+│       └── SettingsTab.module.css
 ├── components/
 │   ├── Layout.tsx/.module.css
 │   ├── Header.tsx/.module.css
