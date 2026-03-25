@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.6rem 3rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(245,240,232,0.92);
+  backdrop-filter: blur(14px);
+  z-index: 100;
+  animation: fadeUp 0.5s ease both;
+}
+
+.brand {}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--charcoal);
+  transition: letter-spacing 0.3s;
+}
+
+.logo:hover { letter-spacing: 0.4em; }
+
+.logoAccent {
+  font-style: italic;
+  color: var(--primary);
+  transition: color 0.4s;
+}
+
+.tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--taupe);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  cursor: pointer;
+  padding: 0.4rem 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navBtn:hover { color: var(--charcoal); }
+
+.navBtn.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--primary);
+}
+
+.badge {
+  background: var(--primary);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.55rem;
+  padding: 0.1rem 0.4rem;
+  letter-spacing: 0;
+  font-weight: 500;
+  transition: background 0.4s;
+}
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.5rem; }
+  .nav { gap: 1rem; flex-wrap: wrap; }
+}

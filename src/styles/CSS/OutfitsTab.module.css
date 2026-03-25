@@ -1,0 +1,214 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  animation: fadeUp 0.4s ease both;
+  align-items: start;
+}
+
+.left {}
+
+.display {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2.2rem;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.displayTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.displayTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.displaySub {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.outfitName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--primary);
+  text-align: right;
+  animation: fadeUp 0.3s ease;
+  transition: color 0.4s;
+}
+
+.piecesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  flex: 1;
+  margin-bottom: 1.8rem;
+}
+
+/* Spin state */
+.spinState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.spinRing {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  transition: border-color 0.4s;
+}
+
+.spinRingOuter {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse-ring 1.2s ease-out infinite;
+}
+
+.spinText {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+/* Empty prompt */
+.emptyPrompt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 3rem 0;
+}
+
+.emptyOrb {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--sand), var(--muted));
+  margin-bottom: 0.5rem;
+  animation: pulse-ring 3s ease-in-out infinite;
+  box-shadow: 0 0 0 0 var(--sand);
+}
+
+.emptyTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--taupe);
+}
+
+.emptySub {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
+}
+
+.btnGenerate {
+  flex: 1;
+  background: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  padding: 0.9rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.btnGenerate:hover:not(:disabled) {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.btnGenerate:active:not(:disabled) { transform: translateY(0); }
+.btnGenerate:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.spinIcon {
+  display: inline-block;
+  transition: transform 0.5s;
+  font-size: 1rem;
+}
+
+.spinIconActive {
+  animation: spin 0.6s linear infinite;
+}
+
+.btnSave {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--charcoal);
+  padding: 0.9rem 1.4rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.btnSave:hover:not(:disabled) {
+  background: var(--charcoal);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.btnSave:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btnSave.btnSaved {
+  border-color: #7a8c6e;
+  color: #7a8c6e;
+}
+
+.right {}
+
+@media (max-width: 900px) {
+  .wrapper { grid-template-columns: 1fr; }
+}

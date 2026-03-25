@@ -1,0 +1,72 @@
+.zone {
+  border: 1.5px dashed var(--sand);
+  background: var(--warm-white);
+  border-radius: 2px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  overflow: hidden;
+  position: relative;
+}
+
+.zone:hover {
+  border-color: var(--primary);
+  background: #f0ebe1;
+}
+
+.zone:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+.zone.dragging {
+  border-color: var(--primary);
+  background: rgba(181,82,43,0.06);
+  transform: scale(1.01);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  color: var(--sand);
+  transition: color 0.25s, transform 0.4s;
+}
+
+.zone:hover .icon { color: var(--primary); transform: scale(1.1) rotate(5deg); }
+
+.label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--taupe);
+}
+
+.sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.zone:hover .preview { transform: scale(1.03); }
